@@ -1,4 +1,5 @@
 # ThingSpeak Gateway Serial Port
+(by Rosiberto Santos)
 
 
 **Passo a Passo para usar o Gateway**
