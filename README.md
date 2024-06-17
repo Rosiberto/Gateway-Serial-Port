@@ -1,7 +1,7 @@
 # ThingSpeak Gateway Serial Port
 
 
-Passo a Passo para usar o Gateway
+**Passo a Passo para usar o Gateway**
 
 #1. Conecte seu arduino ao computador (desktop ou notebook)
  
@@ -17,3 +17,54 @@ Passo a Passo para usar o Gateway
 
 #7. Para finalizar o Gateway, basta pressionar a letra 'q'
 
+#8. No código do arduino, você deve informar TODOS os fields do ThingSpeak a ser utilizado, incluindo a eles, a leitura do sensor conforme exemplo abaixo:
+
+
+```
+void setup() {
+  Serial.begin(9600);  
+}
+
+  void loop() {
+  
+  //faz a leitura de um sensor analógico qualquer 
+  leituraSensor = analogRead(porta_sensor);
+  
+  // escreve o valor lido pelo sensor na serial
+  Serial.println(String("field1:")+leituraSensor);
+
+  // aguarda 15seg para enviar a próxima leitura
+  delay(15000);
+}
+```
+
+<br>
+
+
+```
+void setup() {
+  Serial.begin(9600);  
+}
+
+  void loop() {
+  
+  leituraSensor1 = analogRead(porta_sensor1);
+  leituraSensor2 = digitalRead(porta_sensor2);
+  leituraSensor3 = analogRead(porta_sensor3);
+  
+  // escreve o valor lido pelo sensor na serial  
+  Serial.println( String("field1:")+leituraSensor1 );  
+  
+  // aguarda 15seg para enviar a leitura do próximo sensor
+  delay(15000);
+  
+  // os passos se repetem
+  Serial.println( String("field2:")+leituraSensor2 );  
+  delay(15000);
+  
+  Serial.println( String("field3:")+leituraSensor3 );  
+  delay(15000);
+  
+  
+}
+```
