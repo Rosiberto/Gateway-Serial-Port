@@ -20,6 +20,9 @@
 #8. No código do arduino, você deve informar TODOS os FIELDS do ThingSpeak a ser utilizado, incluindo a eles, a leitura do sensor conforme exemplo abaixo:
 
 
+
+**Para um sensor**
+
 ```
 void setup() {
   Serial.begin(9600);  
@@ -41,7 +44,7 @@ void setup() {
 
 <br>
 
-
+**Para vários sensores**
 ```
 void setup() {
   Serial.begin(9600);  
