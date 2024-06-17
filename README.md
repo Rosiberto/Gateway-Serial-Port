@@ -17,7 +17,7 @@
 
 #7. Para finalizar o Gateway, basta pressionar a letra 'q'
 
-#8. No código do arduino, você deve informar TODOS os fields do ThingSpeak a ser utilizado, incluindo a eles, a leitura do sensor conforme exemplo abaixo:
+#8. No código do arduino, você deve informar TODOS os FIELDS do ThingSpeak a ser utilizado, incluindo a eles, a leitura do sensor conforme exemplo abaixo:
 
 
 ```
@@ -30,7 +30,8 @@ void setup() {
   //faz a leitura de um sensor analógico qualquer 
   leituraSensor = analogRead(porta_sensor);
   
-  // escreve o valor lido pelo sensor na serial
+  // escreve o valor lido pelo sensor na serial concatenado ao field1
+  // este field1 refere-se ao field1 do ThingSpeak que armazenará o resultado na nuvem
   Serial.println(String("field1:")+leituraSensor);
 
   // aguarda 15seg para enviar a próxima leitura
