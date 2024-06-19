@@ -95,7 +95,7 @@ void setup() {
 	- API Key;
 	- Device ID.
 	
-	**Obs:** *Resource, API Key* e *Device ID* devem ser os mesmo cadastrados na UI do ReFLeX.IoT no menu ***Provisioning***.
+	**Obs:** *Resource, API Key* e *Device ID* devem ser os mesmos cadastrados na UI do ReFLeX.IoT no menu ***Provisioning***.
 
 
 6. Pronto!! Agora é só curtir!!!
