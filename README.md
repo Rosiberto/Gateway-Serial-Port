@@ -73,3 +73,55 @@ void setup() {
   
 }
 ```
+
+<br>
+<br>
+
+# ReFLeX.IoT Gateway Serial Port
+(by Rosiberto Santos)
+
+
+**Passo a Passo para usar o Gateway**
+
+1. Conecte seu arduino ao computador (desktop ou notebook)
+ 
+2. Dê dois cliques no arquivo ReFLeX.IoT-Gateway.exe 
+
+3. Digite o número da Porta que o Arduino foi reconhecido e aperte ENTER
+
+4. Informe:
+	- *URL Host*, local onde está hospedado o ReFLeX.IoT;
+	- Resource;
+	- API Key;
+	- Device ID.
+	
+	**Obs:** *Resource, API Key* e *Device ID* devem ser os mesmo cadastrados na UI do ReFLeX.IoT no menu ***Provisioning***.
+
+
+6. Pronto!! Agora é só curtir!!!
+
+7. Para finalizar o Gateway, basta pressionar a letra 'q'
+
+8. No código do arduino, você deve informar TODOS os *PARÂMETROS* do AgentJSON a ser utilizado de acordo com o sensor, incluindo a eles, a leitura do sensor conforme exemplo abaixo:
+
+<br>
+
+```
+void loop() {
+  
+  // h = armazena a umidade   
+  // t = armazena a temperatura 
+  h = dht.readHumidity();
+  t = dht.readTemperature();
+  
+  // "t:" e "h:" são os parâmetros que o agentJSON espera receber no ReFLeX.IoT
+  Serial.println( String("t:")+t );
+  
+  // uma pausa entre os envios
+  delay(5000); 
+  
+  Serial.println( String("h:")+h );
+  delay(5000);  
+  
+}
+```
